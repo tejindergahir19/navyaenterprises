@@ -17,6 +17,9 @@
     /* Global Styles */
     body {
       font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+      transition: background-color 0.3s ease, color 0.3s ease;
     }
 
     .container {
@@ -38,12 +41,17 @@
       text-decoration: none;
     }
 
+    .nav-toggle {
+      display: none;
+    }
+
     .nav-links {
       list-style: none;
+      display: flex;
+      justify-content: flex-end;
     }
 
     .nav-links li {
-      display: inline-block;
       margin-left: 20px;
     }
 
@@ -54,7 +62,7 @@
 
     /* Hero Section */
     .hero {
-      background-image: url('hero-background.jpg');
+      background-image: url('https://via.placeholder.com/1600x600');
       background-size: cover;
       background-position: center;
       color: #fff;
@@ -172,17 +180,47 @@
 
     /* Responsive Styles */
     @media only screen and (max-width: 768px) {
-      .hero h1 {
-        font-size: 36px;
+      .nav-toggle {
+        display: block;
+        font-size: 24px;
+        color: #fff;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        margin-right: 10px;
       }
 
-      .about h2,
-      .products h2,
-      .contact h2 {
-        font-size: 30px;
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        align-items: flex-end;
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-links li {
+        margin-top: 10px;
+        margin-left: 0;
+      }
+
+      body {
+        padding-top: 60px;
       }
     }
   </style>
+  <script>
+    function toggleNav() {
+      const navLinks = document.querySelector('.nav-links');
+      navLinks.classList.toggle('open');
+    }
+
+    function toggleDarkMode() {
+      const body = document.querySelector('body');
+      body.classList.toggle('dark-mode');
+    }
+  </script>
 </head>
 
 <body>
@@ -191,6 +229,9 @@
     <nav>
       <div class="container">
         <a href="#" class="logo">Navya Enterprises</a>
+        <button class="nav-toggle" onclick="toggleNav()">
+          <i class="fas fa-bars"></i>
+        </button>
         <ul class="nav-links">
           <li><a href="#about">About</a></li>
           <li><a href="#products">Products</a></li>
@@ -229,7 +270,7 @@
   </section>
 
   <!-- Contact Section -->
-  <section id="contact" class="contact fade-in-up">
+  <section id="contact" class="contactfade-in-up">
     <div class="container">
       <h2>Contact Us</h2>
       <p>Get in touch with us for inquiries, quotes, or any other information.</p>
