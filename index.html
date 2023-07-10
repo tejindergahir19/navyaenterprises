@@ -4,236 +4,95 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Navya Enterprises - Manufacturing Industry</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.17/dist/tailwind.min.css" rel="stylesheet">
   <style>
-    /* Reset some default styles */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    /* Global styles */
-    body {
-      font-family: Arial, sans-serif;
-    }
-
-    nav {
-      background-color: #333;
-      color: #fff;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      z-index: 999;
-    }
-
-    .logo h1 {
-      font-size: 24px;
-    }
-
-    .nav-links {
-      list-style: none;
-      display: flex;
-    }
-
-    .nav-links li {
-      margin-left: 20px;
-    }
-
-    .nav-links a {
-      text-decoration: none;
-      color: #fff;
-    }
-
-    header {
+    /* Additional custom styles */
+    .hero-image {
       background-image: url("https://picsum.photos/1200/400");
       background-size: cover;
       height: 400px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      position: relative;
     }
 
     .hero-text {
       background-color: rgba(0, 0, 0, 0.5);
-      padding: 20px;
-      text-align: center;
-      color: #fff;
-    }
-
-    .hero-text h1 {
-      font-size: 36px;
-      margin-bottom: 20px;
-    }
-
-    .hero-text p {
-      font-size: 18px;
-      margin-bottom: 10px;
-    }
-
-    section {
-      padding: 50px;
-      background-color: #f5f5f5;
-      margin-bottom: 20px;
-    }
-
-    section h2 {
-      font-size: 28px;
-      margin-bottom: 20px;
-      color: #333;
-    }
-
-    .product-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
     }
 
     .product {
-      width: 300px;
-      margin: 10px;
       background-color: #fff;
-      padding: 20px;
       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-      text-align: center;
-    }
-
-    .product img {
-      width: 100%;
     }
 
     footer {
       background-color: #333;
       color: #fff;
-      text-align: center;
-      padding: 20px;
-    }
-
-    /* Responsive styles */
-    @media only screen and (max-width: 768px) {
-      .nav-links {
-        display: none;
-      }
-
-      .burger {
-        display: block;
-        cursor: pointer;
-      }
-
-      .burger div {
-        width: 25px;
-        height: 3px;
-        background-color: #fff;
-        margin: 5px;
-        transition: all 0.3s ease;
-      }
-    }
-
-    /* Additional styles for responsive navigation */
-    .nav-active .line1 {
-      transform: rotate(-45deg) translate(-5px, 6px);
-    }
-
-    .nav-active .line2 {
-      opacity: 0;
-    }
-
-    .nav-active .line3 {
-      transform: rotate(45deg) translate(-5px, -6px);
     }
   </style>
 </head>
 <body>
-  <nav>
-    <div class="logo">
-      <h1>Navya Enterprises</h1>
-    </div>
-    <ul class="nav-links">
-      <li><a href="#home">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#products">Products</a></li>
-      <li><a href="#services">Services</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-    <div class="burger">
-      <div class="line1"></div>
-      <div class="line2"></div>
-      <div class="line3"></div>
-    </div>
-  </nav>
-
-  <header id="home">
-    <div class="hero-text">
-      <h1>Welcome to Navya Enterprises</h1>
-      <p>Your Reliable Manufacturing Partner</p>
+  <header class="bg-gray-900 text-white">
+    <div class="container mx-auto py-4 px-8">
+      <h1 class="text-4xl font-bold">Navya Enterprises</h1>
     </div>
   </header>
 
-  <section id="about">
-    <h2>About Us</h2>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed posuere aliquam neque, eget pulvinar velit egestas ut. Quisque sagittis leo eu rutrum convallis.</p>
-    <p>Nulla rutrum eros id tristique lacinia. Mauris maximus gravida felis, ut mattis justo finibus eget. In eleifend ex sit amet diam suscipit, ut commodo erat luctus. Curabitur in arcu ipsum. Suspendisse potenti. Ut nec nulla non metus posuere rhoncus.</p>
-  </section>
+  <div class="hero-image">
+    <div class="container mx-auto py-16">
+      <div class="hero-text bg-gray-900 bg-opacity-50 text-white text-center px-8 py-12">
+        <h1 class="text-5xl font-bold mb-4">Welcome to Navya Enterprises</h1>
+        <p class="text-lg">Your Reliable Manufacturing Partner</p>
+      </div>
+    </div>
+  </div>
 
-  <section id="products">
-    <h2>Our Products</h2>
-    <div class="product-container">
-      <div class="product">
-        <img src="https://picsum.photos/300/200" alt="Product 1">
-        <h3>Product 1</h3>
-        <p>Description of Product 1.</p>
+  <section class="bg-gray-100 py-12">
+    <div class="container mx-auto">
+      <h2 class="text-3xl font-bold mb-8 text-center">About Us</h2>
+      <div class="max-w-3xl mx-auto">
+        <p class="text-lg text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed posuere aliquam neque, eget pulvinar velit egestas ut. Quisque sagittis leo eu rutrum convallis.</p>
+        <p class="text-lg text-center">Nulla rutrum eros id tristique lacinia. Mauris maximus gravida felis, ut mattis justo finibus eget. In eleifend ex sit amet diam suscipit, ut commodo erat luctus. Curabitur in arcu ipsum. Suspendisse potenti. Ut nec nulla non metus posuere rhoncus.</p>
       </div>
-      <div class="product">
-        <img src="https://picsum.photos/300/200" alt="Product 2">
-        <h3>Product 2</h3>
-        <p>Description of Product 2.</p>
-      </div>
-      <div class="product">
-        <img src="https://picsum.photos/300/200" alt="Product 3">
-        <h3>Product 3</h3>
-        <p>Description of Product 3.</p>
-      </div>
-      <!-- Add more product divs as needed -->
     </div>
   </section>
 
-  <section id="services">
-    <h2>Our Services</h2>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed posuere aliquam neque, eget pulvinar velit egestas ut. Quisque sagittis leo eu rutrum convallis.</p>
-    <p>Nulla rutrum eros id tristique lacinia. Mauris maximus gravida felis, ut mattis justo finibus eget. In eleifend ex sit amet diam suscipit, ut commodo erat luctus. Curabitur in arcu ipsum. Suspendisse potenti. Ut nec nulla non metus posuere rhoncus.</p>
+  <section class="bg-white py-12">
+    <div class="container mx-auto">
+      <h2 class="text-3xl font-bold mb-8 text-center">Our Products</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="product p-8">
+          <img src="https://picsum.photos/300/200" alt="Product 1" class="w-full mb-4">
+          <h3 class="text-xl font-bold mb-2">Product 1</h3>
+          <p class="text-lg">Description of Product 1.</p>
+        </div>
+        <div class="product p-8">
+          <img src="https://picsum.photos/300/200" alt="Product 2" class="w-full mb-4">
+          <h3 class="text-xl font-bold mb-2">Product 2</h3>
+          <p class="text-lg">Description of Product 2.</p>
+        </div>
+        <div class="product p-8">
+          <img src="https://picsum.photos/300/200" alt="Product 3" class="w-full mb-4">
+          <h3 class="text-xl font-bold mb-2">Product 3</h3>
+          <p class="text-lg">Description of Product 3.</p>
+        </div>
+        <!-- Add more product divs as needed -->
+      </div>
+    </div>
   </section>
 
-<section id="contact">
-    <h2>Contact Us</h2>
-    <p>For inquiries or more information, please contact us:</p>
-    <p>Email: info@navyaenterprises.com</p>
-    <p>Phone: +1 123-456-7890</p>
+  <section class="bg-gray-100 py-12">
+    <div class="container mx-auto">
+      <h2 class="text-3xl font-bold mb-8 text-center">Contact Us</h2>
+      <div class="max-w-3xl mx-auto">
+        <p class="text-lg text-center">For inquiries or more information, please contact us:</p>
+        <p class="text-lg text-center">Email: info@navyaenterprises.com</p>
+        <p class="text-lg text-center">Phone: +1 123-456-7890</p>
+      </div>
+    </div>
   </section>
 
-  <footer>
-    <p>&copy; 2023 Navya Enterprises. All rights reserved.</p>
+  <footer class="bg-gray-900 text-white py-8">
+    <div class="container mx-auto text-center">
+      <p>&copy; 2023 Navya Enterprises. All rights reserved.</p>
+    </div>
   </footer>
-
-  <script>
-    const navSlide = () => {
-      const burger = document.querySelector('.burger');
-      const nav = document.querySelector('.nav-links');
-
-      burger.addEventListener('click', () => {
-        nav.classList.toggle('nav-active');
-
-        // Burger animation
-        burger.classList.toggle('toggle');
-      });
-    };
-
-    navSlide();
-  </script>
 </body>
 </html>
