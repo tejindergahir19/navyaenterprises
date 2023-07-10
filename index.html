@@ -28,6 +28,7 @@
       top: 0;
       left: 0;
       width: 100%;
+      z-index: 999;
     }
 
     .logo h1 {
@@ -56,21 +57,24 @@
       justify-content: center;
       align-items: center;
       flex-direction: column;
+      position: relative;
+    }
+
+    .hero-text {
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 20px;
+      text-align: center;
+      color: #fff;
     }
 
     .hero-text h1 {
       font-size: 36px;
       margin-bottom: 20px;
-      color: #fff;
-      text-align: center;
-      background-color: rgba(0, 0, 0, 0.7);
-      padding: 10px 20px;
     }
 
     .hero-text p {
       font-size: 18px;
-      color: #fff;
-      text-align: center;
+      margin-bottom: 10px;
     }
 
     section {
@@ -205,8 +209,8 @@
     <p>Nulla rutrum eros id tristique lacinia. Mauris maximus gravida felis, ut mattis justo finibus eget. In eleifend ex sit amet diam suscipit, ut commodo erat luctus. Curabitur in arcu ipsum. Suspendisse potenti. Ut nec nulla non metus posuere rhoncus.</p>
   </section>
 
-  <section id="contact">
-    <<h2>Contact Us</h2>
+<section id="contact">
+    <h2>Contact Us</h2>
     <p>For inquiries or more information, please contact us:</p>
     <p>Email: info@navyaenterprises.com</p>
     <p>Phone: +1 123-456-7890</p>
