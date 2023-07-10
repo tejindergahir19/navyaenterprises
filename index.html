@@ -1,296 +1,235 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Navya Enterprises - Manufacturing Industry</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   <style>
-    /* Reset Styles */
+    /* Reset some default styles */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
 
-    /* Global Styles */
+    /* Global styles */
     body {
       font-family: Arial, sans-serif;
-      background-color: #f9f9f9;
-      color: #333;
-      transition: background-color 0.3s ease, color 0.3s ease;
     }
 
-    .container {
-      max-width: 960px;
-      margin: 0 auto;
-      padding: 20px;
-    }
-
-    /* Header */
-    header {
+    nav {
       background-color: #333;
       color: #fff;
-      padding: 10px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
     }
 
-    .logo {
-      color: #fff;
-      font-weight: bold;
-      text-decoration: none;
-    }
-
-    .nav-toggle {
-      display: none;
+    .logo h1 {
+      font-size: 24px;
     }
 
     .nav-links {
       list-style: none;
       display: flex;
-      justify-content: flex-end;
     }
 
     .nav-links li {
       margin-left: 20px;
     }
 
-    .nav-links li a {
-      color: #fff;
+    .nav-links a {
       text-decoration: none;
+      color: #fff;
     }
 
-    /* Hero Section */
-    .hero {
-      background-image: url('https://via.placeholder.com/1600x600');
+    header {
+      background-image: url("https://picsum.photos/1200/400");
       background-size: cover;
-      background-position: center;
-      color: #fff;
-      padding: 100px 0;
-      text-align: center;
+      height: 400px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
     }
 
-    .hero h1 {
-      font-size: 48px;
+    .hero-text h1 {
+      font-size: 36px;
       margin-bottom: 20px;
-    }
-
-    .cta-button {
-      display: inline-block;
+      color: #fff;
+      text-align: center;
+      background-color: rgba(0, 0, 0, 0.7);
       padding: 10px 20px;
-      background-color: #333;
+    }
+
+    .hero-text p {
+      font-size: 18px;
       color: #fff;
-      text-decoration: none;
-      transition: background-color 0.3s ease;
-    }
-
-    .cta-button:hover {
-      background-color: #666;
-    }
-
-    /* About Section */
-    .about {
-      background-color: #f9f9f9;
-      padding: 100px 0;
       text-align: center;
     }
 
-    .about h2 {
-      font-size: 36px;
+    section {
+      padding: 50px;
+      background-color: #f5f5f5;
       margin-bottom: 20px;
     }
 
-    /* Products Section */
-    .products {
-      padding: 100px 0;
-      text-align: center;
-    }
-
-    .products h2 {
-      font-size: 36px;
+    section h2 {
+      font-size: 28px;
       margin-bottom: 20px;
-    }
-
-    .product-icon {
-      font-size: 48px;
       color: #333;
-      margin-bottom: 10px;
     }
 
-    /* Contact Section */
-    .contact {
-      background-color: #333;
-      color: #fff;
-      padding: 100px 0;
-      text-align: center;
+    .product-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
     }
 
-    .contact h2 {
-      font-size: 36px;
-      margin-bottom: 20px;
-    }
-
-    .contact input,
-    .contact textarea {
-      display: block;
-      margin: 20px auto;
-      width: 100%;
-      padding: 10px;
-    }
-
-    .contact button {
-      display: block;
-      margin: 20px auto;
-      padding: 10px 20px;
+    .product {
+      width: 300px;
+      margin: 10px;
       background-color: #fff;
-      color: #333;
-      border: none;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
+      padding: 20px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      text-align: center;
     }
 
-    .contact button:hover {
-      background-color: #f9f9f9;
+    .product img {
+      width: 100%;
     }
 
-    /* Footer */
     footer {
       background-color: #333;
       color: #fff;
-      padding: 10px 0;
       text-align: center;
+      padding: 20px;
     }
 
-    /* Animations */
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(50px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .fade-in-up {
-      animation: fadeInUp 1s ease-out;
-    }
-
-    /* Responsive Styles */
+    /* Responsive styles */
     @media only screen and (max-width: 768px) {
-      .nav-toggle {
-        display: block;
-        font-size: 24px;
-        color: #fff;
-        background-color: transparent;
-        border: none;
-        cursor: pointer;
-        margin-right: 10px;
-      }
-
       .nav-links {
         display: none;
-        flex-direction: column;
-        align-items: flex-end;
       }
 
-      .nav-links.open {
-        display: flex;
+      .burger {
+        display: block;
+        cursor: pointer;
       }
 
-      .nav-links li {
-        margin-top: 10px;
-        margin-left: 0;
+      .burger div {
+        width: 25px;
+        height: 3px;
+        background-color: #fff;
+        margin: 5px;
+        transition: all 0.3s ease;
       }
+    }
 
-      body {
-        padding-top: 60px;
-      }
+    /* Additional styles for responsive navigation */
+    .nav-active .line1 {
+      transform: rotate(-45deg) translate(-5px, 6px);
+    }
+
+    .nav-active .line2 {
+      opacity: 0;
+    }
+
+    .nav-active .line3 {
+      transform: rotate(45deg) translate(-5px, -6px);
     }
   </style>
-  <script>
-    function toggleNav() {
-      const navLinks = document.querySelector('.nav-links');
-      navLinks.classList.toggle('open');
-    }
-
-    function toggleDarkMode() {
-      const body = document.querySelector('body');
-      body.classList.toggle('dark-mode');
-    }
-  </script>
 </head>
-
 <body>
-  <!-- Header -->
-  <header>
-    <nav>
-      <div class="container">
-        <a href="#" class="logo">Navya Enterprises</a>
-        <button class="nav-toggle" onclick="toggleNav()">
-          <i class="fas fa-bars"></i>
-        </button>
-        <ul class="nav-links">
-          <li><a href="#about">About</a></li>
-          <li><a href="#products">Products</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </div>
-    </nav>
+  <nav>
+    <div class="logo">
+      <h1>Navya Enterprises</h1>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#products">Products</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="burger">
+      <div class="line1"></div>
+      <div class="line2"></div>
+      <div class="line3"></div>
+    </div>
+  </nav>
+
+  <header id="home">
+    <div class="hero-text">
+      <h1>Welcome to Navya Enterprises</h1>
+      <p>Your Reliable Manufacturing Partner</p>
+    </div>
   </header>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="container">
-      <h1>Welcome to Navya Enterprises</h1>
-      <p>We specialize in manufacturing high-quality products for various industries.</p>
-      <a href="#contact" class="cta-button">Contact Us</a>
-    </div>
+  <section id="about">
+    <h2>About Us</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed posuere aliquam neque, eget pulvinar velit egestas ut. Quisque sagittis leo eu rutrum convallis.</p>
+    <p>Nulla rutrum eros id tristique lacinia. Mauris maximus gravida felis, ut mattis justo finibus eget. In eleifend ex sit amet diam suscipit, ut commodo erat luctus. Curabitur in arcu ipsum. Suspendisse potenti. Ut nec nulla non metus posuere rhoncus.</p>
   </section>
 
-  <!-- About Section -->
-  <section id="about" class="about fade-in-up">
-    <div class="container">
-      <h2>About Us</h2>
-      <p>Insert a brief description of your company and its manufacturing capabilities here.</p>
-    </div>
-  </section>
-
-  <!-- Products Section -->
-  <section id="products" class="products fade-in-up">
-    <div class="container">
-      <h2>Our Products</h2>
-      <div class="product-icon">
-        <i class="fas fa-cogs"></i>
+  <section id="products">
+    <h2>Our Products</h2>
+    <div class="product-container">
+      <div class="product">
+        <img src="https://picsum.photos/300/200" alt="Product 1">
+        <h3>Product 1</h3>
+        <p>Description of Product 1.</p>
       </div>
-      <p>Provide information about the products you manufacture and their benefits.</p>
+      <div class="product">
+        <img src="https://picsum.photos/300/200" alt="Product 2">
+        <h3>Product 2</h3>
+        <p>Description of Product 2.</p>
+      </div>
+      <div class="product">
+        <img src="https://picsum.photos/300/200" alt="Product 3">
+        <h3>Product 3</h3>
+        <p>Description of Product 3.</p>
+      </div>
+      <!-- Add more product divs as needed -->
     </div>
   </section>
 
-  <!-- Contact Section -->
-  <section id="contact" class="contactfade-in-up">
-    <div class="container">
-      <h2>Contact Us</h2>
-      <p>Get in touch with us for inquiries, quotes, or any other information.</p>
-      <form>
-        <input type="text" name="name" placeholder="Your Name" required>
-        <input type="email" name="email" placeholder="Your Email" required>
-        <textarea name="message" placeholder="Your Message" required></textarea>
-        <button type="submit">Submit</button>
-      </form>
-    </div>
+  <section id="services">
+    <h2>Our Services</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed posuere aliquam neque, eget pulvinar velit egestas ut. Quisque sagittis leo eu rutrum convallis.</p>
+    <p>Nulla rutrum eros id tristique lacinia. Mauris maximus gravida felis, ut mattis justo finibus eget. In eleifend ex sit amet diam suscipit, ut commodo erat luctus. Curabitur in arcu ipsum. Suspendisse potenti. Ut nec nulla non metus posuere rhoncus.</p>
   </section>
 
-  <!-- Footer -->
+  <section id="contact">
+    <<h2>Contact Us</h2>
+    <p>For inquiries or more information, please contact us:</p>
+    <p>Email: info@navyaenterprises.com</p>
+    <p>Phone: +1 123-456-7890</p>
+  </section>
+
   <footer>
-    <div class="container">
-      <p>&copy; 2023 Navya Enterprises. All rights reserved.</p>
-    </div>
+    <p>&copy; 2023 Navya Enterprises. All rights reserved.</p>
   </footer>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
-</body>
+  <script>
+    const navSlide = () => {
+      const burger = document.querySelector('.burger');
+      const nav = document.querySelector('.nav-links');
 
+      burger.addEventListener('click', () => {
+        nav.classList.toggle('nav-active');
+
+        // Burger animation
+        burger.classList.toggle('toggle');
+      });
+    };
+
+    navSlide();
+  </script>
+</body>
 </html>
