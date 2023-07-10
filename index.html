@@ -1,37 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Navya Enterprises - Manufacturing Industry</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <style>
+    /* Reset Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Global Styles */
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    /* Header */
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 10px 0;
+    }
+
+    .logo {
+      color: #fff;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .nav-links {
+      list-style: none;
+    }
+
+    .nav-links li {
+      display: inline-block;
+      margin-left: 20px;
+    }
+
+    .nav-links li a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    /* Hero Section */
+    .hero {
+      background-image: url('hero-background.jpg');
+      background-size: cover;
+      background-position: center;
+      color: #fff;
+      padding: 100px 0;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
+    }
+
+    .cta-button {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #333;
+      color: #fff;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+
+    .cta-button:hover {
+      background-color: #666;
+    }
+
+    /* About Section */
+    .about {
+      background-color: #f9f9f9;
+      padding: 100px 0;
+      text-align: center;
+    }
+
+    .about h2 {
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+
+    /* Products Section */
+    .products {
+      padding: 100px 0;
+      text-align: center;
+    }
+
+    .products h2 {
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+
+    .product-icon {
+      font-size: 48px;
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    /* Contact Section */
+    .contact {
+      background-color: #333;
+      color: #fff;
+      padding: 100px 0;
+      text-align: center;
+    }
+
+    .contact h2 {
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+
+    .contact input,
+    .contact textarea {
+      display: block;
+      margin: 20px auto;
+      width: 100%;
+      padding: 10px;
+    }
+
+    .contact button {
+      display: block;
+      margin: 20px auto;
+      padding: 10px 20px;
+      background-color: #fff;
+      color: #333;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .contact button:hover {
+      background-color: #f9f9f9;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #333;
+      color: #fff;
+      padding: 10px 0;
+      text-align: center;
+    }
+
+    /* Animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(50px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .fade-in-up {
+      animation: fadeInUp 1s ease-out;
+    }
+
+    /* Responsive Styles */
+    @media only screen and (max-width: 768px) {
+      .hero h1 {
+        font-size: 36px;
+      }
+
+      .about h2,
+      .products h2,
+      .contact h2 {
+        font-size: 30px;
+      }
+    }
+  </style>
+</head>
+
 <body>
-    <section class="container">
-        <div>
-            <h1>Coming Soon!</h1>
-            <div class="countdown">
-                <div class="container-hour">
-                    <h2 class="hour">Time</h2>
-                    <h2>Hours</h2>
-                </div>
-                <div class="container-minutes">
-                    <h2 class="minutes">Time</h2>
-                    <h2>Minutes</h2>
-                </div>
-                <div class="container-seconds">
-                    <h2 class="seconds">Time</h2>
-                    <h2>Seconds</h2>
-                </div>
-                <div class="container-miliSeconds">
-                    <h3 class="miliSeconds">Time</h3>
-                    <h3>MiliSeconds</h3>
-                </div>
-            </div>
-        </div>
-        <div class="imge">
-            <svg width="394.5" height="231.5" viewBox="0 0 789 463" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <g id="IMG 1" clip-path="url(#clip0)">
-                <path id="Vector" d="M773.426 463L479.099 462.907L24.9721 462.772C24.9721 462.772 -27.9913 373.74 20.3449 253.439C51.8552 175.026 115.559 117.18 224.924 152.548C247.452 159.834 282.688 155.18 327.993 125.083C330.297 123.554 332.585 121.957 334.855 120.292C336.095 119.393 337.335 118.456 338.563 117.506C354.986 104.861 369.109 89.4819 380.313 72.0438C387.003 61.6331 395.039 52.1517 404.213 43.8456C409.845 38.747 415.859 34.0876 422.204 29.9082C426.243 27.2389 430.419 24.7563 434.732 22.4604C446.349 16.2817 458.611 11.397 471.295 7.8941C472.542 7.54672 473.795 7.21031 475.053 6.88489C477.982 6.12423 480.935 5.43045 483.912 4.80356C485.955 4.37033 488.008 3.97103 490.07 3.60568C492.594 3.15048 495.136 2.73821 497.695 2.36886C504.662 1.37063 511.717 0.688832 518.861 0.323478C520.213 0.257594 521.567 0.201694 522.925 0.155775C523.788 0.125828 524.653 0.101869 525.516 0.0839003C528.169 0.0240061 530.828 0.00803323 533.492 0.0359838C599.932 0.712788 669.446 28.303 711.777 77.9703C733.087 102.976 747.51 133.579 751.173 169.159C752.55 182.942 752.371 196.836 750.64 210.579C750.586 211.019 750.535 211.453 750.476 211.888C750.386 212.585 750.29 213.292 750.176 213.984C749.813 216.637 749.387 219.315 748.9 222.016C747.828 228.005 747.103 234.294 744.824 240.284C697.767 364.699 833.335 353.654 773.426 463Z" fill="#DCEAFF"/>
-                <path id="Vector_2" d="M350.809 307.125H338.164C334.962 307.125 332.366 309.721 332.366 312.923V441.13C332.366 444.332 334.962 446.927 338.164 446.927H350.809C354.011 446.927 356.607 444.332 356.607 441.13V312.923C356.607 309.721 354.011 307.125 350.809 307.125Z" fill="#EBF3FA"/>
-                <path id="Vector_3" d="M383.85 307.125H371.205C368.003 307.125 365.407 309.721 365.407 312.923V441.13C365.407 444.332 368.003 446.927 371.205 446.927H383.85C387.052 446.927 389.648 444.332 389.648 441.13V312.923C389.648 309.721 387.052 307.125 383.85 307.125Z" fill="#EBF3FA"/>
-                <path id="Vector_4" d="M416.89 307.125H404.246C401.043 307.125 398.447 309.721 398.447 312.923V441.13C398.447 444.332 401.043 446.927 404.246 446.927H416.89C420.093 446.927 422.689 444.332 422.689 441.13V312.923C422.689 309.721 420.093 307.125 416.89 307.125Z" fill="#EBF3FA"/>
-                <path id="Vector_5" d="M449.928 307.125H437.284C434.081 307.125 431.485 309.721 431.485 312.923V441.13C431.485 444.332 434.081 446.927 437.284 446.927H449.928C453.131 446.927 455.727 444.332 455.727 441.13V312.923C455.727 309.721 453.131 307.125 449.928 307.125Z" fill="#EBF3FA"/>
-                <path id="Vector_6" d="M482.969 307.125H470.324C467.122 307.125 464.526 309.721 464.526 312.923V441.13C464.526 444.332 467.122 446.927 470.324 446.927H482.969C486.171 446.927 488.767 444.332 488.767 441.13V312.923C488.767 309.721 486.171 307.125 482.969 307.125Z" fill="#EBF3FA"/>
-                <path id="Vector_7" d="M516.01 307.125H503.365C500.162 307.125 497.566 309.721 497.566 312.923V441.13C497.566 444.332 500.162 446.927 503.365 446.927H516.01C519.212 446.927 521.808 444.332 521.808 441.13V312.923C521.808 309.721 519.212 307.125 516.01 307.125Z" fill="#EBF3FA"/>
-                <path id="Vector_8" d="M525.519 0.0598984V279.568H334.855V120.297C336.095 119.399 337.335 118.462 338.563 117.512C354.986 104.867 369.109 89.4879 380.313 72.0497C387.003 61.6391 395.039 52.1577 404.213 43.8515C409.845 38.753 415.86 34.0935 422.204 29.9142C426.243 27.2409 430.419 24.7563 434.732 22.4603C446.35 16.2817 458.611 11.397 471.295 7.89406C472.543 7.54667 473.796 7.21027 475.053 6.88484C477.983 6.12419 480.936 5.43041 483.913 4.80352C485.955 4.37028 488.008 3.97099 490.07 3.60563C492.594 3.15044 495.136 2.73817 497.696 2.36882C504.662 1.37058 511.717 0.688789 518.861 0.323434C520.213 0.257551 521.568 0.20165 522.925 0.155731C523.803 0.101826 524.656 0.0778666 525.519 0.0598984Z" fill="#EBF3FA"/>
-                <path id="Vector_9" d="M525.519 0.0598919C524.656 0.0778602 523.791 0.10182 522.928 0.131767V275.091H338.562V117.512C337.335 118.462 336.095 119.387 334.855 120.297C332.584 121.957 330.297 123.554 327.993 125.089V286.396H533.494V-1.33412e-06C530.827 -0.0199661 528.168 -2.24775e-06 525.519 0.0598919Z" fill="#C2D2FF"/>
-                <path id="Vector_10" d="M323.16 276.49H539.176C540.707 276.49 542.175 277.097 543.257 278.18C544.339 279.262 544.948 280.73 544.948 282.26V286.962H317.248V282.401C317.248 280.833 317.871 279.33 318.98 278.222C320.089 277.113 321.592 276.49 323.16 276.49Z" fill="#C2D2FF"/>
-                <path id="Vector_11" d="M434.732 22.4603V278.604H422.204V29.9142C426.243 27.2409 430.419 24.7563 434.732 22.4603Z" fill="#C2D2FF"/>
+  <!-- Header -->
+  <header>
+    <nav>
+      <div class="container">
+        <a href="#" class="logo">Navya Enterprises</a>
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#products">Products</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <h1>Welcome to Navya Enterprises</h1>
+      <p>We specialize in manufacturing high-quality products for various industries.</p>
+      <a href="#contact" class="cta-button">Contact Us</a>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="about fade-in-up">
+    <div class="container">
+      <h2>About Us</h2>
+      <p>Insert a brief description of your company and its manufacturing capabilities here.</p>
+    </div>
+  </section>
+
+  <!-- Products Section -->
+  <section id="products" class="products fade-in-up">
+    <div class="container">
+      <h2>Our Products</h2>
+      <div class="product-icon">
+        <i class="fas fa-cogs"></i>
+      </div>
+      <p>Provide information about the products you manufacture and their benefits.</p>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact fade-in-up">
+    <div class="container">
+      <h2>Contact Us</h2>
+      <p>Get in touch with us for inquiries, quotes, or any other information.</p>
+      <form>
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Your Message" required></textarea>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2023 Navya Enterprises. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+</body>
+
+</html>
