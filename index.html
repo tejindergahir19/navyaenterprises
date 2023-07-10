@@ -22,9 +22,47 @@
       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
     }
 
-    footer {
+    .timeline li::before {
+      content: "";
+      position: absolute;
+      top: 10px;
+      left: -16px;
+      width: 8px;
+      height: 8px;
       background-color: #333;
-      color: #fff;
+      border-radius: 50%;
+    }
+
+    .gallery-image {
+      width: 100%;
+      height: auto;
+    }
+
+    .team-member {
+      background-color: #fff;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Animation styles */
+    .fade-in {
+      opacity: 0;
+      animation: fadeInAnimation ease-in-out 1s forwards;
+    }
+
+    @keyframes fadeInAnimation {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+
+    .slide-up {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: slideUpAnimation ease-in-out 1s forwards;
+    }
+
+    @keyframes slideUpAnimation {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
@@ -34,6 +72,30 @@
       <h1 class="text-4xl font-bold">Navya Enterprises</h1>
     </div>
   </header>
+
+  <nav class="bg-gray-800 text-white">
+    <div class="container mx-auto flex flex-wrap items-center justify-between py-4 px-8">
+      <div class="flex items-center flex-shrink-0 mr-6">
+        <a href="#" class="text-lg font-bold">Home</a>
+      </div>
+      <div class="block lg:hidden">
+        <button class="navbar-burger flex items-center px-3 py-2 border rounded text-gray-500 border-gray-600 hover:text-white hover:border-white">
+          <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 2.5A2.5 2.5 0 015 0h10a2.5 2.5 0 012.5 2.5v1a2.5 2.5 0 01-2.5 2.5H5A2.5 2.5 0 012.5 3v-1zm0 8A2.5 2.5 0 015 6.5h10a2.5 2.5 0 012.5 2.5v1a2.5 2.5 0 01-2.5 2.5H5A2.5 2.5 0 012.5 12v-1zM2.5 17A2.5 2.5 0 015 14.5h10a2.5 2.5 0 012.5 2.5v1a2.5 2.5 0 01-2.5 2.5H5A2.5 2.5 0 012.5 18v-1z"></path></svg>
+        </button>
+      </div>
+      <div class="navbar-menu hidden lg:flex lg:items-center lg:w-auto">
+        <div class="lg:flex-grow">
+          <a href="#" class="text-white lg:inline-block lg:mt-0 hover:text-white mr-4">About</a>
+          <a href="#" class="text-white lg:inline-block lg:mt-0 hover:text-white mr-4">Products</a>
+          <a href="#" class="text-white lg:inline-block lg:mt-0 hover:text-white mr-4">Services</a>
+          <a href="#" class="text-white lg:inline-block lg:mt-0 hover:text-white">Contact</a>
+        </div>
+        <div>
+          <a href="#" class="text-white bg-red-600 px-4 py-2 rounded-lg">Get Started</a>
+        </div>
+      </div>
+    </div>
+  </nav>
 
   <div class="hero-image">
     <div class="container mx-auto py-16">
@@ -58,17 +120,17 @@
     <div class="container mx-auto">
       <h2 class="text-3xl font-bold mb-8 text-center">Our Products</h2>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-        <div class="product p-8">
+        <div class="product p-8 fade-in">
           <img src="https://picsum.photos/300/200" alt="Product 1" class="w-full mb-4">
           <h3 class="text-xl font-bold mb-2">Product 1</h3>
           <p class="text-lg">Description of Product 1.</p>
         </div>
-        <div class="product p-8">
+        <div class="product p-8 fade-in">
           <img src="https://picsum.photos/300/200" alt="Product 2" class="w-full mb-4">
           <h3 class="text-xl font-bold mb-2">Product 2</h3>
           <p class="text-lg">Description of Product 2.</p>
         </div>
-        <div class="product p-8">
+        <div class="product p-8 fade-in">
           <img src="https://picsum.photos/300/200" alt="Product 3" class="w-full mb-4">
           <h3 class="text-xl font-bold mb-2">Product 3</h3>
           <p class="text-lg">Description of Product 3.</p>
@@ -80,19 +142,133 @@
 
   <section class="bg-gray-100 py-12">
     <div class="container mx-auto">
-      <h2 class="text-3xl font-bold mb-8 text-center">Contact Us</h2>
-      <div class="max-w-3xl mx-auto">
-        <p class="text-lg text-center">For inquiries or more information, please contact us:</p>
-        <p class="text-lg text-center">Email: info@navyaenterprises.com</p>
-        <p class="text-lg text-center">Phone: +1 123-456-7890</p>
+      <h2 class="text-3xl font-bold mb-8 text-center">Timeline</h2>
+      <ul class="timeline mx-auto max-w-xl">
+        <li class="relative mb-8 slide-up">
+          <h3 class="text-lg font-bold mb-2">Year 1</h3>
+          <p class="text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed posuere aliquam neque, eget pulvinar velit egestas ut.</p>
+        </li>
+        <li class="relative mb-8 slide-up">
+          <h3 class="text-lg font-bold mb-2">Year 2</h3>
+          <p class="text-gray-600">Nulla rutrum eros id tristique lacinia. Mauris maximus gravida felis, ut mattis justo finibus eget.</p>
+        </li>
+        <li class="relative mb-8 slide-up">
+          <h3 class="text-lg font-bold mb-2">Year 3</h3>
+          <p class="text-gray-600">In eleifend ex sit amet diam suscipit, ut commodo erat luctus. Curabitur in arcu ipsum. Suspendisse potenti.</p>
+        </li>
+        <!-- Add more timeline items as needed -->
+      </ul>
+    </div>
+  </section>
+
+  <section class="bg-white py-12">
+    <div class="container mx-auto">
+      <h2 class="text-3xl font-bold mb-8 text-center">Gallery</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+        <div class="gallery-item slide-up">
+          <img src="https://picsum.photos/300/200" alt="Image 1" class="gallery-image">
+        </div>
+        <div class="gallery-item slide-up">
+          <img src="https://picsum.photos/300/200" alt="Image 2" class="gallery-image">
+        </div>
+        <div class="gallery-item slide-up">
+          <img src="https://picsum.photos/300/200" alt="Image 3" class="gallery-image">
+        </div>
+        <div class="gallery-item slide-up">
+          <img src="https://picsum.photos/300/200" alt="Image 4" class="gallery-image">
+        </div>
+        <!-- Add more gallery items as needed -->
       </div>
     </div>
   </section>
 
-  <footer class="bg-gray-900 text-white py-8">
+  <section class="bg-gray-100 py-12">
+    <div class="container mx-auto">
+      <h2 class="text-3xl font-bold mb-8 text-center">Our Team</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="team-member p-8 slide-up">
+          <img src="https://picsum.photos/300/200" alt="Team Member 1" class="w-full mb-4">
+          <h3 class="text-xl font-bold mb-2">John Doe</h3>
+          <p class="text-lg">Position</p>
+        </div>
+        <div class="team-member p-8 slide-up">
+          <img src="https://picsum.photos/300/200" alt="Team Member 2" class="w-full mb-4">
+          <h3 class="text-xl font-bold mb-2">Jane Smith</h3>
+          <p class="text-lg">Position</p>
+        </div>
+        <div class="team-member p-8 slide-up">
+          <img src="https://picsum.photos/300/200" alt="Team Member 3" class="w-full mb-4">
+          <h3 class="text-xl font-bold mb-2">Alex Johnson</h3>
+          <p class="text-lg">Position</p>
+        </div>
+        <!-- Add more team member divs as needed -->
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-white py-12">
+    <div class="container mx-auto">
+      <h2 class="text-3xl font-bold mb-8 text-center">Map</h2>
+      <div class="mx-auto max-w-2xl slide-up">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3424.830240350981!2d75.85875411508713!3d30.90064848159986!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3910d5245ff2f61b%3A0x63b65aeb39d06704!2sLudhiana%2C%20Punjab%2C%20India!5e0!3m2!1sen!2sus!4v1626369030837!5m2!1sen!2sus" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="bg-gray-100 py-12">
+    <div class="container mx-auto">
+      <h2 class="text-3xl font-bold mb-8 text-center">Contact Us</h2>
+      <div class="max-w-3xl mx-auto">
+        <form class="w-full max-w-lg">
+          <div class="flex flex-wrap -mx-3 mb-6">
+            <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+              <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-first-name">
+                First Name
+              </label>
+              <input class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="grid-first-name" type="text" placeholder="John">
+            </div>
+            <div class="w-full md:w-1/2 px-3">
+              <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-last-name">
+                Last Name
+              </label>
+              <input class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-last-name" type="text" placeholder="Doe">
+            </div>
+          </div>
+          <div class="flex flex-wrap -mx-3 mb-6">
+            <div class="w-full px-3">
+              <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-email">
+                Email
+              </label>
+              <input class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-email" type="email" placeholder="john.doe@example.com">
+            </div>
+          </div>
+          <div class="flex flex-wrap -mx-3 mb-6">
+            <div class="w-full px-3">
+              <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-message">
+                Message
+              </label>
+              <textarea class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-message" placeholder="Enter your message..."></textarea>
+            </div>
+          </div>
+          <div class="flex justify-center">
+            <button class="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
+              Send Message
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+
+  
+  <section class="bg-gray-900 text-white py-8">
     <div class="container mx-auto text-center">
       <p>&copy; 2023 Navya Enterprises. All rights reserved.</p>
     </div>
-  </footer>
+  </section>
+
+  
 </body>
 </html>
