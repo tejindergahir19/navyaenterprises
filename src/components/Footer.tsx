@@ -166,7 +166,7 @@ git push -u origin gh-pages --force`;
         </div>
 
         {/* GitHub Pages Deployment Accordion (Requested by user) */}
-        <div className="p-4 rounded-xl bg-neutral-900 border border-neutral-800 space-y-3">
+        {/* <div className="p-4 rounded-xl bg-neutral-900 border border-neutral-800 space-y-3">
           <button
             onClick={() => setShowDeploymentGuide(!showDeploymentGuide)}
             className="w-full flex items-center justify-between text-left text-xs font-mono text-neutral-300 hover:text-white"
@@ -199,7 +199,7 @@ git push -u origin gh-pages --force`;
               </div>
             </div>
           )}
-        </div>
+        </div> */}
 
         {/* Bottom Strip */}
         <div className="pt-6 border-t border-neutral-900 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-neutral-400">
@@ -214,7 +214,7 @@ git push -u origin gh-pages --force`;
         </div>
 
         {/* Creator Attribution - Centered at the very end of the website */}
-        <div className="pt-6 pb-2 text-center text-xs text-neutral-400 flex items-center justify-center gap-1.5 font-sans">
+        {/* <div className="pt-6 pb-2 text-center text-xs text-neutral-400 flex items-center justify-center gap-1.5 font-sans">
           <span>Made with</span>
           <span className="text-red-500 inline-block animate-pulse" role="img" aria-label="love">❤️</span>
           <span>by</span>
@@ -226,7 +226,7 @@ git push -u origin gh-pages --force`;
           >
             Tejinder Singh
           </a>
-        </div>
+        </div> */}
       </div>
     </footer>
   );
