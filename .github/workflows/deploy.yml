@@ -1,7 +1,8 @@
 name: Deploy to GitHub Pages
 
 on:
-  push:
+  pull_request:
+    types: [closed]
     branches: ["main"]
   workflow_dispatch:
 
@@ -16,10 +17,15 @@ concurrency:
 
 jobs:
   build:
+    # Only run when the PR was actually merged
+    if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          ref: main
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
@@ -39,11 +45,13 @@ jobs:
           path: "./dist"
 
   deploy:
+    if: github.event.pull_request.merged == true
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     needs: build
+
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
