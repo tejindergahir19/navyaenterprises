@@ -165,42 +165,6 @@ git push -u origin gh-pages --force`;
           </div>
         </div>
 
-        {/* GitHub Pages Deployment Accordion (Requested by user) */}
-        {/* <div className="p-4 rounded-xl bg-neutral-900 border border-neutral-800 space-y-3">
-          <button
-            onClick={() => setShowDeploymentGuide(!showDeploymentGuide)}
-            className="w-full flex items-center justify-between text-left text-xs font-mono text-neutral-300 hover:text-white"
-          >
-            <div className="flex items-center gap-2">
-              <Github className="w-4 h-4 text-white" />
-              <span className="font-bold text-white">GitHub Pages Deployment Instructions</span>
-              <span className="text-[10px] bg-neutral-800 text-amber-400 px-2 py-0.5 rounded">Ready: base="./" configured</span>
-            </div>
-            {showDeploymentGuide ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
-          </button>
-
-          {showDeploymentGuide && (
-            <div className="pt-2 border-t border-neutral-800 space-y-3">
-              <p className="text-xs text-neutral-300">
-                This project is configured with relative base paths (<code className="text-amber-400">base: './'</code> in <code className="text-neutral-200">vite.config.ts</code>), making it fully compatible with GitHub Pages sub-path hosting without 404 broken asset errors.
-              </p>
-
-              <div className="relative">
-                <pre className="p-4 rounded-xl bg-neutral-950 border border-neutral-800 font-mono text-[11px] text-neutral-300 overflow-x-auto">
-                  {deployCommand}
-                </pre>
-                <button
-                  onClick={copyDeployScript}
-                  className="absolute top-3 right-3 p-2 rounded-lg bg-neutral-800 hover:bg-neutral-700 text-neutral-200 hover:text-white flex items-center gap-1 text-[10px] font-mono cursor-pointer"
-                >
-                  {copiedScript ? <Check className="w-3.5 h-3.5 text-emerald-400" /> : <Copy className="w-3.5 h-3.5" />}
-                  <span>{copiedScript ? 'Copied!' : 'Copy Script'}</span>
-                </button>
-              </div>
-            </div>
-          )}
-        </div> */}
-
         {/* Bottom Strip */}
         <div className="pt-6 border-t border-neutral-900 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-neutral-400">
           <div>
