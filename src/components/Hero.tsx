@@ -151,13 +151,13 @@ export const Hero: React.FC<HeroProps> = ({ onExplore3D, onOpenRFQ }) => {
             <span>Inspect 3D Sleeves (360°)</span>
           </button>
 
-          <button
+          {/* <button
             onClick={() => window.dispatchEvent(new CustomEvent('open-foundry-chatbot'))}
             className="w-full sm:w-auto py-3.5 px-6 rounded-xl bg-neutral-900/80 hover:bg-neutral-800 text-amber-300 hover:text-amber-200 border border-amber-500/30 font-bold text-sm flex items-center justify-center gap-2 transition-all cursor-pointer hover:scale-102 active:scale-98"
           >
             <Bot className="w-4 h-4 text-amber-400" />
             <span>Ask Foundry AI</span>
-          </button>
+          </button> */}
         </div>
 
         {/* 4 Commercial Proof Points (Trust factors) */}

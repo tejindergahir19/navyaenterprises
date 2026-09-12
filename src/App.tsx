@@ -49,7 +49,7 @@ export default function App() {
       <main className="flex-grow space-y-8 sm:space-y-16">
         {/* 1. Hero Section */}
         <Hero 
-          onExplore3D={() => scrollToSection('3d-studio')}
+          onExplore3D={() => scrollToSection('studio-3d')}
           onOpenRFQ={() => scrollToSection('request-quote')}
         />
 
@@ -97,7 +97,7 @@ export default function App() {
       <QuickWhatsAppFloat />
 
       {/* Floating Technical Formula & Sales Assistant Chatbot */}
-      <FoundryChatbot />
+      {/* <FoundryChatbot /> */}
     </div>
   );
 }

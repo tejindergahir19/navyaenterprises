@@ -526,7 +526,7 @@ export const Sleeve3DViewer: React.FC<Sleeve3DViewerProps> = ({
   };
 
   return (
-    <div id="3d-studio" className="w-full bg-neutral-900 border border-neutral-800 rounded-3xl overflow-hidden shadow-2xl">
+    <div id="studio-3d" className="w-full bg-neutral-900 border border-neutral-800 rounded-3xl overflow-hidden shadow-2xl">
       {/* Studio Header */}
       <div className="p-5 sm:p-6 bg-neutral-950 border-b border-neutral-800 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
@@ -621,7 +621,8 @@ export const Sleeve3DViewer: React.FC<Sleeve3DViewerProps> = ({
         {/* Quick Utility Buttons on Canvas (Top-Right) */}
         <div className="absolute top-4 right-4 z-10 flex items-center gap-2">
           <button
-            onClick={() => setIsAutoRotating(!isAutoRotating)}
+              onClick={resetCamera}
+            // onClick={() => setIsAutoRotating(!isAutoRotating)}
             className={`p-2 rounded-lg border text-xs transition-colors backdrop-blur-md cursor-pointer ${
               isAutoRotating 
                 ? 'bg-amber-500/20 border-amber-500/50 text-amber-400' 
@@ -631,14 +632,14 @@ export const Sleeve3DViewer: React.FC<Sleeve3DViewerProps> = ({
           >
             <RotateCw className="w-4 h-4" />
           </button>
-
+{/* 
           <button
             onClick={resetCamera}
             className="p-2 rounded-lg bg-neutral-900/80 border border-neutral-700 text-neutral-400 hover:text-white text-xs backdrop-blur-md cursor-pointer"
             title="Reset View Position"
           >
             <Maximize2 className="w-4 h-4" />
-          </button>
+          </button> */}
         </div>
 
         {/* The WebGL Canvas */}

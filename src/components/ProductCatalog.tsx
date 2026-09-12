@@ -138,7 +138,7 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
                   <button
                     onClick={() => {
                       onSelectFor3D(product.id);
-                      const el = document.getElementById('3d-studio');
+                      const el = document.getElementById('studio-3d');
                       if (el) el.scrollIntoView({ behavior: 'smooth' });
                     }}
                     className="flex-1 py-2 px-2 rounded-xl bg-neutral-800 hover:bg-neutral-700 text-neutral-200 hover:text-white text-xs font-semibold flex items-center justify-center gap-1.5 transition-colors cursor-pointer whitespace-nowrap min-w-0"
