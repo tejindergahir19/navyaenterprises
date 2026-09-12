@@ -29,7 +29,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenWhatsAppRFQ }) => {
   }, []);
 
   const navLinks = [
-    { label: '3D Sleeve CAD', href: '#3d-studio' },
+    { label: '3D Sleeve CAD', href: '#studio-3d' },
     { label: 'Products', href: '#catalog' },
     { label: 'Thermal Science', href: '#thermal-science' },
     { label: 'Yield Calculator', href: '#yield-calculator' },
@@ -54,11 +54,14 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenWhatsAppRFQ }) => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
         {/* Brand Logo & Tag */}
         <a 
-          href="#" 
+          href="/" 
           className="flex items-center gap-3 group"
           onClick={(e) => {
-            e.preventDefault();
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+            const currentPath = window.location.pathname;
+            if (currentPath === '/' || currentPath === '/index.html') {
+              e.preventDefault();
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
           }}
         >
           {/* Flame mark inspired by PDF header */}
@@ -84,13 +87,17 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenWhatsAppRFQ }) => {
         {/* Desktop Navigation Links */}
         <nav className="hidden lg:flex items-center gap-1 bg-neutral-900/60 p-1.5 rounded-full border border-neutral-800/80 backdrop-blur-sm">
           {navLinks.map((link) => (
-            <button
+            <a
               key={link.href}
-              onClick={() => handleNavClick(link.href)}
+              href={link.href}
+              onClick={(e) => {
+                e.preventDefault();
+                handleNavClick(link.href);
+              }}
               className="px-3.5 py-1.5 rounded-full text-xs font-medium text-neutral-300 hover:text-white hover:bg-neutral-800/80 transition-all cursor-pointer"
             >
               {link.label}
-            </button>
+            </a>
           ))}
         </nav>
 
@@ -129,13 +136,17 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenWhatsAppRFQ }) => {
         <div className="lg:hidden bg-neutral-950/95 border-b border-neutral-800 px-6 py-5 backdrop-blur-xl animate-in slide-in-from-top-4 duration-200">
           <div className="space-y-3">
             {navLinks.map((link) => (
-              <button
+              <a
                 key={link.href}
-                onClick={() => handleNavClick(link.href)}
-                className="w-full text-left py-2 text-sm font-medium text-neutral-200 hover:text-amber-400 border-b border-neutral-900 transition-colors"
+                href={link.href}
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleNavClick(link.href);
+                }}
+                className="block w-full text-left py-2 text-sm font-medium text-neutral-200 hover:text-amber-400 border-b border-neutral-900 transition-colors"
               >
                 {link.label}
-              </button>
+              </a>
             ))}
 
             <div className="pt-4 flex flex-col gap-3">

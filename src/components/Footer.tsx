@@ -130,7 +130,7 @@ git push -u origin gh-pages --force`;
               Foundry Tools
             </h4>
             <ul className="space-y-2">
-              <li><a href="#3d-studio" className="hover:text-amber-400 transition-colors">3D Sleeve CAD Studio</a></li>
+              <li><a href="#studio-3d" className="hover:text-amber-400 transition-colors">3D Sleeve CAD Studio</a></li>
               <li><a href="#yield-calculator" className="hover:text-amber-400 transition-colors">Modulus & Yield Estimator</a></li>
               <li><a href="#thermal-science" className="hover:text-amber-400 transition-colors">Chvorinov's Rule Guide</a></li>
               <li><a href="#thermal-science" className="hover:text-amber-400 transition-colors">Shrinkage Defect Guide</a></li>
